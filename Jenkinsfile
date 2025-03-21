@@ -1,7 +1,7 @@
 pipeline{
     agent none
-stages ('label none'){
-    stage{
+stages {
+    stage('slave1'){
         steps{
             agent {
                 label 'docker_slave'
@@ -10,7 +10,7 @@ stages ('label none'){
             sh "hostname -i"
         }
     }
-    stage{
+    stage('slave2'){
         steps{
             agent{
                 label 'docker_slave2'

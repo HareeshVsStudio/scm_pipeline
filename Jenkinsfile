@@ -1,21 +1,24 @@
 pipeline{
     agent any
-stages {
-    stage('slave1'){
-        steps{
-            agent {
-                label 'docker_slave'
+    stages{
+        stage('sourcecode'){
+            steps{
+                echo "this is source code stage"
             }
-            echo "This is a agent none pipeline"
-            sh "hostname -i"
-        }
+            stage('Deploy'){
+            steps{
+                echo "this is deploy stage"
+            }
+       }
+        stage('Docker'){
+            steps{
+                echo "this is docker stage"
+            }
+             stage('k8s'){
+            steps{
+                echo "this is k8s stage"
+            }
     }
-    stage('slave2'){
-        steps{
-            echo "This is a agent none pipeline"
-            sh "hostname -i"
-        }
-    }
-
-}
+   
+                
 }

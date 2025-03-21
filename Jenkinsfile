@@ -1,24 +1,40 @@
 pipeline{
     agent any
     stages{
-        stage('sourcecode'){
+        stage('source'){
             steps{
-                echo "this is source code stage"
-            }
-            stage('Deploy'){
+                echo "****source code"
+            }    
+        }
+        stage('build'){
             steps{
-                echo "this is deploy stage"
-            }
-       }
-        stage('Docker'){
+                echo"**** build code"
+            }   
+        }
+        stage('deploy'){
             steps{
-                echo "this is docker stage"
+                echo "**** deploy code"
             }
-             stage('k8s'){
+        }
+        stage('test'){
             steps{
-                echo "this is k8s stage"
+               echo "**** test code"
+            }    
+        }
+        stage('sonar'){
+            steps{
+                echo "**** sonar code"
+            } 
+        }
+        stage('docker'){
+            steps{
+                echo "**** docker code"        
             }
+        }
+        stage('k8s'){
+            steps{
+                echo "**** k8s code"
+            }
+        }
     }
-   
-                
 }

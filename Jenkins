@@ -1,0 +1,25 @@
+pipeline{
+    agent {
+        label 'docker_slave'
+    }
+    stages{
+        stage('First stage'){
+            steps{
+                echo "****This is firdt stage****"
+            }
+        }
+        stage('second stage'){
+            steps{
+                echo "**** This i s second stage****"
+            }
+            
+        }
+        stage('third stage'){
+            steps{
+                echo "**** This is third stage****"
+            }
+            
+        }
+
+    }
+}

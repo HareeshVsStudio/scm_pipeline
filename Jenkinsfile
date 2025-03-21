@@ -4,7 +4,7 @@ stages ('label none'){
     stage{
         steps{
             agent {
-                label 'docker-slave'
+                label 'docker_slave'
             }
             echo "This is a agent none pipeline"
             sh "hostname -i"
@@ -13,7 +13,7 @@ stages ('label none'){
     stage{
         steps{
             agent{
-                label 'docker-slave2'
+                label 'docker_slave2'
             }
             echo "This is a agent none pipeline"
             sh "hostname -i"
